@@ -21,7 +21,7 @@ export const NavBar = () => {
                 positions: []
             }
 
-            fetch(`${Settings.remoteURL}/users?employee=true&name_like=${encodeURI(terms)}`)
+            fetch(`${Settings.remoteURL}/players?employee=true&name_like=${encodeURI(terms)}`)
                 .then(r => r.json())
                 .then(employees => {
                     foundItems.employees = employees
