@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 
 
-const Login = () => {
+ const Login = () => {
     const [credentials, syncAuth] = useState({
         email: "",
         remember: false
