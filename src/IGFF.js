@@ -11,7 +11,7 @@ export const IGFF = () => (
     <>
       <Route
         render={() => {
-          if (localStorage.getItem("IGFF_customer")) {
+          if (localStorage.getItem("IGFF_user")) {
             return (
               <>
                 <NavBar />
