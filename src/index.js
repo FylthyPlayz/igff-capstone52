@@ -7,7 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <IGFF />
+    <BrowserRouter>
+      <IGFF />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
