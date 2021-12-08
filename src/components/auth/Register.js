@@ -6,14 +6,13 @@ import "./Login.css"
 export const Register = (props) => {
     const [user, setUser] = useState({})
     const conflictDialog = useRef()
-
     const history = useHistory()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${user.email}`)
             .then(res => res.json())
             .then(user => !!user.length)
-    }
+        }
     const handleRegister = (e) => {
         e.preventDefault()
         existingUserCheck()
@@ -33,11 +32,12 @@ export const Register = (props) => {
                                 history.push("/")
                             }
                         })
+                    }
+                    else {
+                        conflictDialog.current.showModal()
+                    }
                 }
-                else {
-                    conflictDialog.current.showModal()
-                }
-            })
+                )
     }
 
     const updateUser = (evt) => {
@@ -45,19 +45,7 @@ export const Register = (props) => {
         copy[evt.target.id] = evt.target.value
         setUser(copy)
     }
-    const [teams, changeTeams] = useState([])
-
-    useEffect(
-        () => {
-            fetch("http://localhost:8088/teams")
-                .then(res => res.json())
-                .then((teamArray) => {
-                    changeTeams(teamArray)
-                })
-        },
-        []
-    )
-
+        
     return (
         <main style={{ textAlign: "center" }}>
             <dialog className="dialog dialog--password" ref={conflictDialog}>
@@ -72,29 +60,6 @@ export const Register = (props) => {
                     <input onChange={updateUser}
                            type="text" id="name" className="form-control"
                            placeholder="Enter your name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="favorite team" type="select" id="favTeam" className="form-control"> Favorite Team </label>
-                    <select
-                        onChange={
-                            (evt) => {
-                                const copy = { ...user }
-                                copy.locationId = parseInt(evt.target.value)
-                                updateUser(copy)
-                            }}
-                        className="form-control"
-                    >
-                        <option value="0">Select a Team </option>
-                        {
-                            teams.map(
-                                (teamObj) => {
-                                    return <option value={teamObj.id}>
-                                        {teamObj.name}
-                                    </option>
-                                })
-                        }
-                    </select>
-
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>

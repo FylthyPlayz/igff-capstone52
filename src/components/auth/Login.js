@@ -19,7 +19,7 @@ export const Login = () => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("IGFF_customer", exists.id)
+                    localStorage.setItem("IGFF_user", exists.id)
                     history.push("/")
                 } else {
                     existDialog.current.showModal()

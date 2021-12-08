@@ -6,24 +6,15 @@ export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/locations">Locations</Link>
+                <Link className="navbar__link" to="/players">Players</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/kandies">Kandy List</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/employees">Employees</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/customers">Customers</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/purchases">My Orders</Link>
+                <Link className="navbar__link" to="/teams">Teams</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="#" onClick={
                     () => {
-                        localStorage.removeItem("IGFF_customer")
+                        localStorage.removeItem("IGFF_user")
                     }
                 }>Logout</Link>
             </li>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router"
 
-export const Teams = () => {
+
+export const TeamList = () => {
     const [teams, changeTeams] = useState([])
      
    
@@ -27,9 +27,9 @@ export const Teams = () => {
                     }
                 )
             }
-            {/* <div>
-            <button onClick={() => history.push("/teams/create")}>Hire team</button>
-            </div> */}
         </>
     )
 }
+{/* <div>
+<button onClick={() => history.push("/teams/create")}>Hire team</button>
+</div> */} // might be needed to add players to a created TeamBuilder
