@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 
 export const TeamList = () => {
     const [teams, changeTeams] = useState([])
@@ -23,13 +23,11 @@ export const TeamList = () => {
             {
                 teams.map(
                     (teamObj) => {
-                        return <h3 key={`team--${teamObj.id}`}>{teamObj.name}</h3>
+                        return <h3 key={`team--${teamObj.id}`}>
+                            <Link to= {`/teams/${teamObj.id}`}>{teamObj.name}</Link></h3>
                     }
                 )
             }
         </>
     )
 }
-{/* <div>
-<button onClick={() => history.push("/teams/create")}>Hire team</button>
-</div> */} // might be needed to add players to a created TeamBuilder

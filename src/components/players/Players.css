@@ -1,0 +1,16 @@
+.player {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.player--single {
+    width: 40em;
+    margin: 7em auto;
+}
+
+.player:hover {
+    animation: jiggle 0.2s;
+    transition: .4s all ease;
+    z-index: 11;
+    box-shadow: 5px 15px 20px rgba(72, 62, 23, 0.4)
+}
