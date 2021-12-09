@@ -12,6 +12,9 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="/teams">Teams</Link>
             </li>
             <li className="navbar__item active">
+                <Link className="navbar__link" to="/teamBuilder">TeamBuilder</Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="#" onClick={
                     () => {
                         localStorage.removeItem("IGFF_user")
