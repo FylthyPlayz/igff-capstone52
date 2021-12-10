@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {PlayerList} from "./PlayerList"
+import { useParams } from "react-router-dom"
 
 
 export const PlayerPositionList = () => {
-    const players = PlayerList()
-    const [playerPositions, changePlayerPositions] = useState([]) 
-    
+    const [playerPositions, changePlayerPositions] = useState([])
+    const { playerPositionId } = useParams()
+
     useEffect(
         () => {
-            fetch("http://localhost:8088/players?_expand=playerPosition")
+            fetch(`http://localhost:8088/players?playerPositionId=${playerPositionId}`)
                 .then(res => res.json())
                 .then((positionArray) => {
                     changePlayerPositions(positionArray)
                 })
         },
-        []
+        [playerPositionId]
     )
-        return (
-            <>
+    return (
+        <>
             {
-                players.map(
-                    (playerObj) => {
-                        return <h3 key={`player--${playerObj.id}`}>
-                            <Link to= {`/players/${playerObj.id}`}>{playerObj.name}</Link></h3>
+                playerPositions.map(
+                    (playerPositionObj) => {
+                        return <h3 key={`player--${playerPositionObj.id}`}>
+                            <Link >{playerPositionObj.name}</Link></h3>
                     }
-                    )
+                )
             }
-            </>
-        )
-   
+        </>
+    )
+
 }
 

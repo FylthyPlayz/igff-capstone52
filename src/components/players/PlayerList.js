@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const PlayerList = () => {
     const [players, changePlayers] = useState([])
-    const [playerPositions, changePlayerPositions] = useState([]) 
-   
+    const [playerPositions, changePlayerPositions] = useState([])
+
 
     useEffect(
         () => {
@@ -33,16 +33,16 @@ export const PlayerList = () => {
                 playerPositions.map(
                     (positionObj) => {
                         return <h6 key={`playerPosition--${positionObj.id}`}>
-                            <Link to= {`/playerPositions/${positionObj.id}`}>{positionObj.positionName}</Link> </h6>
-                            
+                            <Link to={`/playerPositions/${positionObj.id}`}>{positionObj.positionName}</Link> </h6>
+
                     }
                 )
             }
-            { 
+            {
                 players.map(
                     (playerObj) => {
                         return <h3 key={`player--${playerObj.id}`}>
-                            <Link to= {`/players/${playerObj.id}`}>{playerObj.name}</Link></h3>
+                            <Link to={`/players/${playerObj.id}`}>{playerObj.name}</Link></h3>
                     }
                 )
             }

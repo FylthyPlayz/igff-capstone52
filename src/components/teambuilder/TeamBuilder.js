@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 export const TeamBuilderForm = () => {
     const [players, changePlayers] = useState([])
     const history = useHistory()
-    
+
     const [teamBuilder, updateTeamBuilder] = useState({
         name: "",
         userId: parseInt(localStorage.getItem(`IGFF_user`)),
@@ -134,7 +134,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.rb2Id = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -158,7 +158,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.wr1Id = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -182,7 +182,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.wr2Id = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -206,7 +206,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.teId = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -230,7 +230,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.flexId = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -254,7 +254,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.defId = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}
@@ -278,7 +278,7 @@ export const TeamBuilderForm = () => {
                     <select
                         onChange={
                             (evt) => {
-                                const copy = { ...teamBuilder}
+                                const copy = { ...teamBuilder }
                                 copy.kId = (evt.target.value)
                                 updateTeamBuilder(copy)
                             }}

@@ -6,10 +6,10 @@ import { TeamBuilderForm } from "./components/teambuilder/TeamBuilder"
 export default () => {
     return (
         <>
-             <Route exact path="/teamBuilder">
+            <Route exact path="/teamBuilder">
                 <TeamBuilderForm />
             </Route>
-            
+
         </>
     )
 }
