@@ -14,3 +14,9 @@
     z-index: 11;
     box-shadow: 5px 15px 20px rgba(72, 62, 23, 0.4)
 }
+
+.player__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

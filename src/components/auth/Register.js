@@ -12,7 +12,7 @@ export const Register = (props) => {
         return fetch(`http://localhost:8088/users?email=${user.email}`)
             .then(res => res.json())
             .then(user => !!user.length)
-        }
+    }
     const handleRegister = (e) => {
         e.preventDefault()
         existingUserCheck()
@@ -32,20 +32,20 @@ export const Register = (props) => {
                                 history.push("/")
                             }
                         })
-                    }
-                    else {
-                        conflictDialog.current.showModal()
-                    }
                 }
-                )
+                else {
+                    conflictDialog.current.showModal()
+                }
+            }
+            )
     }
 
     const updateUser = (evt) => {
-        const copy = {...user}
+        const copy = { ...user }
         copy[evt.target.id] = evt.target.value
         setUser(copy)
     }
-        
+
     return (
         <main style={{ textAlign: "center" }}>
             <dialog className="dialog dialog--password" ref={conflictDialog}>
@@ -58,8 +58,8 @@ export const Register = (props) => {
                 <fieldset>
                     <label htmlFor="name"> Full Name </label>
                     <input onChange={updateUser}
-                           type="text" id="name" className="form-control"
-                           placeholder="Enter your name" required autoFocus />
+                        type="text" id="name" className="form-control"
+                        placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>

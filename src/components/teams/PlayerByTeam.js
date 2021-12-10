@@ -8,19 +8,27 @@ export const PlayerByTeam = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/teams/${teamId}`)
+            fetch(`http://localhost:8088/players?teamId=${teamId}`)
                 .then(res => res.json())
                 .then(set)
         },
-        [ teamId ]  // Above function runs when the value of teamId
+        [teamId]  // Above function runs when the value of teamId
     )
+
+
 
     return (
         <>
-            <section className="playerbyteam">
-                <h3 className="player__name">{team.player?.name}</h3>
-                <div className="player__position">is a {team.player?.playerPositiong}</div>
-            </section>
+            {
+                team.map(
+                    (teamObj) => {
+                        return <h3 key={`team--${teamObj.id}`}>
+                            <Link to={`/players/${parseInt(teamObj.id)}`}>{teamObj.name}</Link></h3>
+                    }
+                )
+            }
         </>
     )
 }
+
+// to= {`/teams/${parseInt(teamObj.id)}`}

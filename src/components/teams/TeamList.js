@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const TeamList = () => {
     const [teams, changeTeams] = useState([])
-     
-   
+
+
 
     useEffect(
         () => {
@@ -19,12 +19,12 @@ export const TeamList = () => {
 
     return (
         <>
-            
+
             {
                 teams.map(
                     (teamObj) => {
                         return <h3 key={`team--${teamObj.id}`}>
-                            <Link to= {`/teams/${teamObj.id}`}>{teamObj.name}</Link></h3>
+                            <Link to={`/teams/${parseInt(teamObj.id)}`}>{teamObj.name}</Link></h3>
                     }
                 )
             }
