@@ -95,10 +95,11 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select a Quarterback</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
                                     </option>
+                                    
                                 })
                         }
                     </select>

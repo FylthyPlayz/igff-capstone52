@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useImperativeHandle } from "react"
-import { Link, useParams, useHistory } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 
 export const Player = () => {
