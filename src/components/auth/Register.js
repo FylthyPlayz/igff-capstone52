@@ -29,7 +29,7 @@ export const Register = (props) => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("IGFF_user", createdUser.id)
-                                history.push("/")
+                                history.push("/landingPage") // push them to the landing page after registration.
                             }
                         })
                 }
