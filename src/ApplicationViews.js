@@ -1,8 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { DeleteProfile } from "./components/auth/EditProfile"
-import { UserFavorites } from "./components/landingpage/LandingPage"
-import SearchResults from "./components/search/SearchResults"
+import { UserFavorites } from "./components/Favorites/FavoriteTeams"
 import PlayerRoutes from "./PlayerRoutes"
 import TeamBuilderRoutes from "./TeamBuilderRoutes"
 import TeamRoutes from "./TeamRoutes"
@@ -19,9 +18,6 @@ export const ApplicationViews = () => {
             <Route exact path="/landingPage">
             <UserFavorites />
             </Route>
-            {/* <Route path="/search">
-                <SearchResults />
-            </Route> */}
         </>
     )
 }

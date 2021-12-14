@@ -4,7 +4,6 @@ import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 import { NavBar } from "./components/nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
-import { userFavorites } from "./components/landingpage/LandingPage"
 import "./IGFF.css"
 
 
