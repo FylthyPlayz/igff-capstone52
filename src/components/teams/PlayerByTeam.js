@@ -12,7 +12,7 @@ export const PlayerByTeam = () => {
                 .then(res => res.json())
                 .then(set)
         },
-        [teamId]  // Above function runs when the value of teamId
+        [teamId]  // Above function runs when the value of teamId changes
     )
 
 
@@ -30,5 +30,3 @@ export const PlayerByTeam = () => {
         </>
     )
 }
-
-// to= {`/teams/${parseInt(teamObj.id)}`}

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
 
@@ -29,7 +29,7 @@ export const Register = (props) => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("IGFF_user", createdUser.id)
-                                history.push("/landingPage") // push them to the landing page after registration.
+                                history.push("/landingPage") // push them to the landing page after registration to select a favorite team. Users will only see this if they are new.
                             }
                         })
                 }

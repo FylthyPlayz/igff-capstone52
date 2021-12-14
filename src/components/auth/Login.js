@@ -2,27 +2,27 @@ import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import "./Login.css"
-
+// this page will render the login form for the user to login to.
 export const Login = () => {
     const [email, set] = useState("")
     const existDialog = useRef()
     const history = useHistory()
 
-    const existingUserCheck = () => {
+    const existingUserCheck = () => { // this function will check for the existing user by fetching the users email and returning the user id if found.
         return fetch(`http://localhost:8088/users?email=${email}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
 
-    const handleLogin = (e) => {
+    const handleLogin = (e) => { // this function will handle the login for the existing user. If they are, it will push them to the home page "/", if not there will be a message shown that the user doesn't exist.
         e.preventDefault()
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("IGFF_user", exists.id)
+                    localStorage.setItem("IGFF_user", exists.id) // if the user exists, go to the homepage
                     history.push("/")
                 } else {
-                    existDialog.current.showModal()
+                    existDialog.current.showModal() // else show the error message
                 }
             })
     }
