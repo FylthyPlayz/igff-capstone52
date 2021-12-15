@@ -12,7 +12,7 @@ export const Player = () => {
                 .then(res => res.json())
                 .then(set)
         },
-        [id]  // Above function runs when the value of employeeId change
+        [id]  // Above function runs when the value of id changes
     )
 
     return (

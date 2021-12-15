@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { TeamBuilderForm } from "./components/teambuilder/TeamBuilder"
+import { TeamEvaluation } from "./components/teambuilder/TeamEvaluation"
 
 
 export default () => {
@@ -9,7 +10,9 @@ export default () => {
             <Route exact path="/teamBuilder">
                 <TeamBuilderForm />
             </Route>
-
+            <Route exact path="/teamBuilderId(\d+)">
+                <TeamEvaluation/>
+            </Route>
         </>
     )
 }
