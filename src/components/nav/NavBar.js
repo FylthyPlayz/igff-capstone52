@@ -15,7 +15,7 @@ export const NavBar = (props) => { // the exported variable of NavBar has props 
                 <Link className="navbar__link" to="/teamBuilder">TeamBuilder</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/myFavorites">My Favorites</Link>
+                <Link className="navbar__link" to="/userFavorites">My Favorites</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/editProfile">Edit Profile</Link>

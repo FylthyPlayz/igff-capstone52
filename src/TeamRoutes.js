@@ -14,7 +14,7 @@ export default () => {
             <Route exact path="/teams/:teamId(\d+)">
                 <PlayerByTeam />
             </Route>
-            <Route exact path="/MyFavorites">
+            <Route exact path="/userFavorites">
                 <MyFavorites />
             </Route>
         </>

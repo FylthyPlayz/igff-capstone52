@@ -36,16 +36,16 @@ export const TeamBuilderForm = () => {
 
         const newTeamBuilder = {
             name: teamBuilder.name,
-            userId: teamBuilder.userId,
-            qbId: teamBuilder.qbId,
-            rb1Id: teamBuilder.rb1Id,
-            rb2Id: teamBuilder.rb2Id,
-            wr1Id: teamBuilder.wr1Id,
-            wr2Id: teamBuilder.wr2Id,
-            teId: teamBuilder.teId,
-            flexId: teamBuilder.flexId,
-            defId: teamBuilder.defId,
-            kId: teamBuilder.kId,
+            userId: parseInt(teamBuilder.userId),
+            qbId: parseInt(teamBuilder.qbId),
+            rb1Id: parseInt(teamBuilder.rb1Id),
+            rb2Id: parseInt(teamBuilder.rb2Id),
+            wr1Id: parseInt(teamBuilder.wr1Id),
+            wr2Id: parseInt(teamBuilder.wr2Id),
+            teId: parseInt(teamBuilder.teId),
+            flexId: parseInt(teamBuilder.flexId),
+            defId: parseInt(teamBuilder.defId),
+            kId: parseInt(teamBuilder.kId),
         }
         const fetchOption = {
             method: 'POST',
@@ -56,8 +56,8 @@ export const TeamBuilderForm = () => {
         }
         return fetch("http://localhost:8088/teamBuilder?_expand=user", fetchOption)
             .then(response => response.json())
-            .then(() => {
-                history.push("/teamBuilder")
+            .then((response) => {
+                history.push(`/teamBuilder/${response.id}`)
             })
     }
     return (
@@ -96,10 +96,13 @@ export const TeamBuilderForm = () => {
                         {
                             players.map(
                                 (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "QB") {
                                     return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
-                                    
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -120,10 +123,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select your 1st Runningback</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "RB") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -144,10 +151,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select your 2nd Runningback</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "RB") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -168,10 +179,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select your 1st Wide Reciever</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "WR") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -192,10 +207,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select your 2nd Wide Reciever</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "WR") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -216,10 +235,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select a Tight End</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "TE") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -240,10 +263,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select a flex option</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "RB") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -264,10 +291,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select a Defense</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "DEF") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
@@ -288,10 +319,14 @@ export const TeamBuilderForm = () => {
                         <option value="0">Select a kicker</option>
                         {
                             players.map(
-                                (playerObj) => {
-                                    return <option value={playerObj.id}>
+                                (playerObj) => { 
+                                    if( playerObj.playerPosition?.positionName === "K") {
+                                    return <option value={playerObj.id}> 
                                         {playerObj.name}
-                                    </option>
+                                    </option> 
+                                    } else {
+                                       return ""
+                                    }
                                 })
                         }
                     </select>
