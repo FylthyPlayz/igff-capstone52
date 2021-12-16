@@ -6,7 +6,7 @@ import PlayerRoutes from "./PlayerRoutes"
 import TeamBuilderRoutes from "./TeamBuilderRoutes"
 import TeamRoutes from "./TeamRoutes"
 
-export const ApplicationViews = () => {
+export const ApplicationViews = () => { // this stores all of the routing from page to page to make sure the user can jump to and from each page and hyperlink
     return (
         <>
             <PlayerRoutes />

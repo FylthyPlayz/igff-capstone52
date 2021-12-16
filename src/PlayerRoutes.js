@@ -4,7 +4,7 @@ import { PlayerList } from "./components/players/PlayerList"
 import { PlayerPositionList } from "./components/players/PlayerPositionList"
 import { Player } from "./components/players/Players"
 
-export default () => {
+export default () => { // routes to the player list and to the players from the position hyperlinks and also to a individual player card
     return (
         <>
             <Route exact path="/players">
