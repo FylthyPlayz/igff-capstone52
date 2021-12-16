@@ -51,7 +51,7 @@ export const UserFavorites = () => { // a function to select and submit favorite
                 )
             )
         })
-        Promise.all(fetchArray)
+        Promise.all(fetchArray) // this promise.all will force all promises from the fetch array to run and complete before going to the next action which will push us to the players page.
             .then(() => {
                 history.push("/players")
             })
