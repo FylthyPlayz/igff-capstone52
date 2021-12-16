@@ -10,7 +10,7 @@ export default () => {
             <Route exact path="/teamBuilder">
                 <TeamBuilderForm />
             </Route>
-            <Route exact path="/teamBuilderId(\d+)">
+            <Route exact path="/teamBuilder/:teamBuilderId(\d+)">
                 <TeamEvaluation/>
             </Route>
         </>
