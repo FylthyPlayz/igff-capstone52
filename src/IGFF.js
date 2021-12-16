@@ -7,7 +7,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import "./IGFF.css"
 
 
-export const IGFF = () => (
+export const IGFF = () => ( // the main application to render the page or redirect to the login page
   <>
     <Route
       render={() => {

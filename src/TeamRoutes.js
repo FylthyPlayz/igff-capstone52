@@ -5,7 +5,7 @@ import { PlayerByTeam } from "./components/teams/PlayerByTeam"
 import { MyFavorites } from "./components/Favorites/MyFavorites"
 
 
-export default () => {
+export default () => { // routes specifically for routing to the teamlist, each player on those teams, and the favorites of the user
     return (
         <>
             <Route exact path="/teams">

@@ -7,14 +7,14 @@ export const Player = () => {
     const { id } = useParams()
 
     useEffect(
-        () => {
+        () => { // a fetch to grab the information of all the players with their teams and positions
             fetch(`http://localhost:8088/players?_expand=team&_expand=playerPosition&id=${id}`)
                 .then(res => res.json())
                 .then(set)
         },
         [id]  // Above function runs when the value of id changes
     )
-
+// the below is an attempt at creating a "card" for when the hyperlinked player is clicked on, this card will come up.
     return (
         <>
          <div className="card-body">

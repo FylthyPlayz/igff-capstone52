@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 export const TeamBuilderForm = () => {
     const [players, changePlayers] = useState([])
+    // const [flexList, setFlexList] = useState([])
     const history = useHistory()
 
     const [teamBuilder, updateTeamBuilder] = useState({
@@ -30,6 +31,8 @@ export const TeamBuilderForm = () => {
         },
         []
     )
+
+    
 
     const submitTeamBuilder = (event) => {
         event.preventDefault()
@@ -64,7 +67,7 @@ export const TeamBuilderForm = () => {
         <form className="teamBuilderForm">
             <h2 className="teamBuilderForm__title">Build your Squad!</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="teamName">
                     <label htmlFor="name">Team Name:</label>
                     <input
                         onChange={
@@ -81,7 +84,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="QB">
                     <label htmlFor="QB">Quarterback</label>
                     <select
                         onChange={
@@ -96,7 +99,7 @@ export const TeamBuilderForm = () => {
                         {
                             players.map(
                                 (playerObj) => { 
-                                    if( playerObj.playerPosition?.positionName === "QB") {
+                                    if( playerObj.playerPosition?.positionName === "Quarterback") {
                                     return <option value={playerObj.id}> 
                                         {playerObj.name}
                                     </option> 
@@ -109,7 +112,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="Runningback1">
                     <label htmlFor="RB1">Runningback 1</label>
                     <select
                         onChange={
@@ -137,7 +140,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="Runningback2">
                     <label htmlFor="RB2">Runningback 2</label>
                     <select
                         onChange={
@@ -165,7 +168,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="WideReciever1">
                     <label htmlFor="WR1">Wide Reciever 1</label>
                     <select
                         onChange={
@@ -193,7 +196,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="WideReciever2">
                     <label htmlFor="WR2">Wide Reciever 2</label>
                     <select
                         onChange={
@@ -221,7 +224,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="TightEnd">
                     <label htmlFor="TE">Tight End</label>
                     <select
                         onChange={
@@ -249,7 +252,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="Flex">
                     <label htmlFor="flex">Flex</label>
                     <select
                         onChange={
@@ -264,7 +267,9 @@ export const TeamBuilderForm = () => {
                         {
                             players.map(
                                 (playerObj) => { 
-                                    if( playerObj.playerPosition?.positionName === "RB") {
+                                    if( playerObj.playerPosition?.positionName === "RB" ||
+                                    playerObj.playerPosition?.positionName === "WR" ||
+                                    playerObj.playerPosition?.positionName === "TE") {
                                     return <option value={playerObj.id}> 
                                         {playerObj.name}
                                     </option> 
@@ -277,7 +282,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="Defense">
                     <label htmlFor="Defense">Defense</label>
                     <select
                         onChange={
@@ -305,7 +310,7 @@ export const TeamBuilderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" key="Kicker">
                     <label htmlFor="Kicker">Kicker</label>
                     <select
                         onChange={

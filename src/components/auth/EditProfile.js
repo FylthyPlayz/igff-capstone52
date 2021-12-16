@@ -34,7 +34,7 @@ export const DeleteProfile = () => {
                 
             <div>
                 <button className="user__delete"
-                    id="user--${userId}" onClick={deleteClick}>Delete Profile</button>
+                     onClick={deleteClick}>Delete Profile</button>
             </div>
 
             </>
