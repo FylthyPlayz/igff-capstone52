@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 export const TeamList = () => {
     const [teams, changeTeams] = useState([])
 
-
-
     useEffect(
         () => {
             fetch("http://localhost:8088/teams")

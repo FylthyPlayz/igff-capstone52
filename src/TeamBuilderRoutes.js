@@ -11,7 +11,7 @@ export default () => { // routes specifically to the teamBuilder and then to the
                 <TeamBuilderForm />
             </Route>
             <Route exact path="/teamBuilder/:teamBuilderId(\d+)">
-                <TeamEvaluation/>
+                <TeamEvaluation />
             </Route>
         </>
     )

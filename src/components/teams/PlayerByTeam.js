@@ -15,8 +15,6 @@ export const PlayerByTeam = () => {
         [teamId]  // Above function runs when the value of teamId changes
     )
 
-
-
     return (
         <>
             {
