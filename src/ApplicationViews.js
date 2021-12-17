@@ -13,10 +13,10 @@ export const ApplicationViews = () => { // this stores all of the routing from p
             <TeamRoutes />
             <TeamBuilderRoutes />
             <Route exact path="/editProfile">
-            <DeleteProfile />
+                <DeleteProfile />
             </Route>
             <Route exact path="/landingPage">
-            <UserFavorites />
+                <UserFavorites />
             </Route>
         </>
     )

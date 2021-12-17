@@ -15,30 +15,30 @@ export const DeleteProfile = () => {
         },
         []
     )
-   
-   
+
+
     const deleteClick = () => { // this function is responsible for the onclick event below that will delete the user from localStorage and push them back to the login page.
-        fetch(`http://localhost:8088/users/${localStorage.getItem(`IGFF_user`)}`, { method: "DELETE"})
-                .then(() => {
-                    localStorage.clear()
-                    history.push("/login")
-                })
-                
+        fetch(`http://localhost:8088/users/${localStorage.getItem(`IGFF_user`)}`, { method: "DELETE" })
+            .then(() => {
+                localStorage.clear()
+                history.push("/login")
+            })
+
     }
 
-//below is the return for what will be on the page that the user will see. A quick message with a button click to invoke the above function.
-        return (
-            <>
-                 
-                Hello {user?.name} . If you are not satisfied with this product and would like to delete your profile then hit this fat "delete profile" button below. We are sorry to see you go...
-                
+    //below is the return for what will be on the page that the user will see. A quick message with a button click to invoke the above function.
+    return (
+        <>
+
+            Hello {user?.name} . If you are not satisfied with this product and would like to delete your profile then hit this fat "delete profile" button below. We are sorry to see you go...
+
             <div>
                 <button className="user__delete"
-                     onClick={deleteClick}>Delete Profile</button>
+                    onClick={deleteClick}>Delete Profile</button>
             </div>
 
-            </>
-        )
+        </>
+    )
 
 
 }
