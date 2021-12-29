@@ -17,6 +17,19 @@
 
 .player__header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: center;
+    justify-content: center;
+}
+
+.card-body {
+   
+    outline-style: solid;
+    border-radius: 90em;
+    height: 40em;
+    outline-width: 1em;
+    
+}
+.small {
+    display: flex;
+    flex-direction: space-around 2em;
 }

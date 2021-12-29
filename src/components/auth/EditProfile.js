@@ -30,7 +30,7 @@ export const DeleteProfile = () => {
     return (
         <>
 
-            Hello {user?.name} . If you are not satisfied with this product and would like to delete your profile then hit this fat "delete profile" button below. We are sorry to see you go...
+            Hello {user?.name} . If you are not satisfied with this product and would like to delete your profile then hit this "delete profile" button below. We are sorry to see you go...
 
             <div>
                 <button className="user__delete"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
-
+import "./TeamBuilder.css"
 
 export const TeamBuilderForm = () => {
     const [players, changePlayers] = useState([]) // sets a variable to an array to store our players and a set function to set the state
@@ -47,7 +47,7 @@ export const TeamBuilderForm = () => {
             teId: parseInt(teamBuilder.teId),
             flexId: parseInt(teamBuilder.flexId),
             defId: parseInt(teamBuilder.defId),
-            kId: parseInt(teamBuilder.kId),
+            kId: +teamBuilder.kId, // The plus sign is the same as parseInt()
         }
         const fetchOption = {
             method: 'POST',

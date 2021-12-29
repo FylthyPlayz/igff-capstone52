@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import "./PlayersPage.css"
 export const PlayerList = () => {
     const [players, changePlayers] = useState([])
     const [playerPositions, changePlayerPositions] = useState([])
@@ -29,15 +29,20 @@ export const PlayerList = () => {
 
     return (
         <>
+        
+        <div className="playerPositions">
             {
                 playerPositions.map( // a map to display the available positions with a link to all players who hold that position in the api 
                     (positionObj) => {
-                        return <h6 key={`playerPosition--${positionObj.id}`}>
+                        return <h6 className="individualPositions" key={`playerPosition--${positionObj.id}`}>
                             <Link to={`/playerPositions/${positionObj.id}`}>{positionObj.positionName}</Link> </h6>
 
                     }
                 )
-            }
+            } 
+            </div>
+            
+            <div className="playerList">
             {
                 players.map( // a map to display the individual players in a list format
                     (playerObj) => {
@@ -45,7 +50,8 @@ export const PlayerList = () => {
                             <Link to={`/players/${playerObj.id}`}>{playerObj.name}</Link></h3>
                     }
                 )
-            }
+            } </div>
+           
         </>
     )
 }
