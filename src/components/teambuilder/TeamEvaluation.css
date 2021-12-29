@@ -1,0 +1,28 @@
+.masterdiv {
+    display: flex;
+    flex-direction: column;
+}
+.teamEvalText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+.teamEval {
+    flex: 3;
+    display: flex;
+    font-size: 4em;
+}
+.teamDescription {
+    flex: 2;
+    display: flex;
+    flex-direction: end;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+.teamDescriptionValue {
+    flex: 4;
+display: flex;
+font-size: 3em;
+}

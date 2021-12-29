@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-
+import "./TeamEvaluation.css"
 export const TeamEvaluation = () => {
     const [team, setTeam] = useState({})
     const [players, setPlayers] = useState([])
@@ -72,19 +72,28 @@ export const TeamEvaluation = () => {
     // in the return below for evaluation we are calling theTeamScore with a method of toFixed(1) which will round the decimal places to 1.
     return (
         <>
+        <div className="masterDiv">
             {
-                <div>
-                    Your team evaluation is!
-                    {theTeamScore.toFixed(1)}
+                <div className="teamEvalText">
+                    Your team evaluation is! 
                 </div>
-
             }
             {
-                <div>
+                    <div className= "teamEval">
+                        {theTeamScore.toFixed(1)}
+                    </div>
+            }
+            {
+                <div className="teamDescription">
                     About your team...
+                </div>
+            }
+            {
+                <div className="teamDescriptionValue">
                     {roundNumbers()}
                 </div>
             }
+        </div>
         </>
     )
 }
