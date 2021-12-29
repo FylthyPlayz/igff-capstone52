@@ -20,7 +20,7 @@ export const PlayerByTeam = () => {
             {
                 team.map(
                     (teamObj) => {
-                        return <h3 key={`team--${teamObj.id}`}>
+                        return <h3 key={`team--${teamObj.id}`} className="player-team">
                             <Link to={`/players/${parseInt(teamObj.id)}`}>{teamObj.name}</Link></h3>
                     }
                 )

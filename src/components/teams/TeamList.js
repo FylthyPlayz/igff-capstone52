@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./TeamList.css"
 
 export const TeamList = () => {
     const [teams, changeTeams] = useState([])
@@ -21,7 +22,7 @@ export const TeamList = () => {
             {
                 teams.map(
                     (teamObj) => {
-                        return <h3 key={`team--${teamObj.id}`}>
+                        return <h3 key={`team--${teamObj.id}`} className="teamList">
                             <Link to={`/teams/${parseInt(teamObj.id)}`}>{teamObj.name}</Link></h3>
                     }
                 )

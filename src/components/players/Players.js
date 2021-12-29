@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-
+import Players from "./Players.css"
 
 export const Player = () => {
     const [player, set] = useState([])

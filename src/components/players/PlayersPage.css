@@ -1,0 +1,30 @@
+.playerPositions {
+    display: flex;
+    flex-direction: row;
+    font-size: 32px;
+    border-bottom: 5px solid black;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.playerList {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    align-items: center;
+}
+.playerList:link {
+    color:red
+}
+.playerList:visited {
+    color:black
+}
+.individualPositions {
+    display: flex;
+    padding-right: 2em;
+}
+.player-positionList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
